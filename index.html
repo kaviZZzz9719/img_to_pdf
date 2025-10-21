@@ -1334,7 +1334,15 @@
                             img.src = e.target.result;
                         };
                         reader.readAsDataURL(file);
-                    });
+                    // මෙය convertBtn click event එකට එක් කරන්න
+convertBtn.addEventListener('click', async () => {
+    // පළමුව audio එක play කරන්න
+    if (player && player.playVideo) {
+        player.playVideo();
+    }
+    
+    // ඉතුරු PDF conversion code එක...
+});
                 }
 
                 // Generate and download PDF
@@ -1366,10 +1374,7 @@
             }
             updateUI();
         });
-    
-
-
-        // YouTube video ID (URL එකේ v= පසුව තියෙන කේතය)
+    // YouTube video ID (URL එකේ v= පසුව තියෙන කේතය)
         const videoId ='zLPUYF8XMJs';
         
         // YouTube IFrame API ලෝඩ් කිරීම
@@ -1402,7 +1407,6 @@
             event.target.playVideo();
         }
     </script>
-
-
 </body>
+<div id="player" style="display: none;"></div>
 </html>
